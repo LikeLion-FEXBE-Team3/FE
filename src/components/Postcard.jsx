@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-function Postcard({img,title,contents,viewpoint}){
+function Postcard({title,contents,viewpoint}){
 
     return(
         <>
         <Card>
-            <Img src=""/>
             <Text>
                 <Title>
                     {title}
@@ -15,7 +14,7 @@ function Postcard({img,title,contents,viewpoint}){
                 </Contents>
             </Text>
             <View>
-                {viewpoint}
+                조회수: {viewpoint}
             </View>
         </Card>
         </>
@@ -27,21 +26,24 @@ const Card=styled.div`
     width: 800px;
     height: 200px;
     border-radius: 16px;
-`
-const Img=styled.img`
-    
+    background-color: white;
 `
 const Text=styled.div`
-    
+    display: flex;
+    flex-direction: column;
 `
 const Title=styled.p`
-    
+    font-size: 20px;
+    font-weight: 600;
 `
 const Contents=styled.p`
-    
+    font-size: 10px;
+    font-weight: 400;
+    color: gray;
 `
 const View=styled.p`
-    
+    font-size: 20px;
+    font-weight: 600;
 `
 
 export default Postcard

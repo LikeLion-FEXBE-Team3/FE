@@ -1,14 +1,16 @@
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 
-function Genrecard({genre}){
+function GenreCard({genre}){
+    const navigate = useNavigate();
 
     const otherGenre=()=>{
-
+        navigate('/post');
     }
 
     return(
         <>
-        <Card>
+        <Card onClick={otherGenre}>
             {genre}
         </Card>
         </>
@@ -20,6 +22,9 @@ const Card=styled.div`
     width: 200px;
     height: 100px;
     border-radius: 16px;
+    font-weight: 700;
+    color: white;
+    background-color: black;
 `
 
-export default Genrecard
+export default GenreCard
