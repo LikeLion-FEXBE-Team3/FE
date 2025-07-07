@@ -13,9 +13,9 @@ function Post({what}){
 
     const getPost=()=>{
         axios
-            .get(`https://localhost:8080/api/posts`)
+            .get(`http://54.180.89.73:8080/api/posts`)
             .then((response) => {
-            setPost(Array.isArray(response.data) ? response.data : []);
+            setPost(response.data?.data);
             })
             .catch((err) => {
             console.error(err);
@@ -49,8 +49,10 @@ function Post({what}){
         }); //높은 가격순이면 b-a를 반환->양수면(b가 a보다 크면) b,a -> 내림차순 정렬
     }
 
+    console.log(post)
+
     return(
-        <>
+        <Entire>
         <NavBar>
         <NewPost onClick={newPost}>
             게시물 등록
@@ -77,9 +79,16 @@ function Post({what}){
                 onClick={onePost}/>
             ))}
         </PostBox>
-        </>
+        </Entire>
     )
 }
+const Entire=styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-top: 20px;
+    gap: 10px;
+`
 
 const NavBar=styled.div`
     display: flex;

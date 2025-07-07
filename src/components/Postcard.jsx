@@ -24,9 +24,13 @@ function Postcard({title,contents,viewpoint}){
 const Card=styled.div`
     display: flex;
     width: 800px;
-    height: 200px;
+    height: 100px;
     border-radius: 16px;
     background-color: white;
+    justify-content: space-between;
+    background-color: beige;
+    padding: 10px;
+    line-height: 15px;
 `
 const Text=styled.div`
     display: flex;
@@ -37,7 +41,7 @@ const Title=styled.p`
     font-weight: 600;
 `
 const Contents=styled.p`
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 400;
     color: gray;
 `
