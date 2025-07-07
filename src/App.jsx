@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';                
-import Post from './components/Postcard';
+import Post from './pages/Post';
 import Home from './pages/Home';
 import NewPost from './pages/NewPost';
 import OnePost from './pages/OnePost';
