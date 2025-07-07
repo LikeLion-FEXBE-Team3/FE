@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';                
 import Post from './components/Postcard';
+import Home from './pages/Home';
+import NewPost from './pages/NewPost';
+import OnePost from './pages/OnePost';
 
 export default function App() {
   return (
@@ -15,8 +18,10 @@ export default function App() {
         }}
       >
         <Routes>
-          <Route path="/about"   element={<Post />} />
-          <Route path="/search"  element={<div>검색 결과: {new URLSearchParams(window.location.search).get('query')}</div>} />
+          <Route path="/"   element={<Home/>} />
+          <Route path="/post"   element={<Post/>} />
+          <Route path="/newPost"   element={<NewPost/>} />
+          <Route path="/onePost"   element={<OnePost/>} />
         </Routes>
       </div>
     </BrowserRouter>

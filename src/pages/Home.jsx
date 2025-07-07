@@ -1,6 +1,5 @@
-import React from 'react';
-import BoxCard from '../components/BoxCard';
-import './Home.css';
+import Genrecard from '../components/GenreCard';
+import styled from 'styled-components';
 
 const boxes = [
   { title: '댄스', to: '/artist' },
@@ -11,10 +10,18 @@ const boxes = [
 
 export default function Home() {
   return (
-    <div className="home-grid">
-      {boxes.map(b => (
-        <BoxCard key={b.to} title={b.title} to={b.to} />
-      ))}
-    </div>
+    <>
+    <GenreBox>
+      <Genrecard genre="댄스"/>
+      <Genrecard genre="힙합"/>
+      <Genrecard genre="발라드"/>
+      <Genrecard genre="자유"/>
+    </GenreBox>
+
+    </>
   );
 }
+
+const GenreBox=styled.div`
+  
+`
