@@ -16,25 +16,29 @@ export default function Header() {
     <header className="header">
       <div className="header__left">
         <div className="logo">Ono</div>
+
         <div className="search-box">
           <input
             type="text"
             className="search-input"
-            placeholder="검색어를 입력하세요"
+            placeholder="검색어를 입력하세요🔍"
             value={query}
             onChange={e => setQuery(e.target.value)}
             onKeyDown={e => e.key === 'Enter' && handleSearch()}
           />
-          <button className="search-btn" onClick={handleSearch}>
-            🔍
-          </button>
+          <button className="search-btn" onClick={handleSearch}></button>
         </div>
+        <span className="search-tagline">Music is my life~</span>
       </div>
+
       <div className="header__right">
-        <Link to="/melon" target="https://www.melon.com/">Melon</Link>
-        <Link to="/youtube" target="https://www.youtube.com/k">YouTube</Link>
+        <a href="https://www.melon.com" target="_blank" rel="noopener noreferrer">
+          Melon
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+          YouTube
+        </a>
       </div>
     </header>
   );
 }
-
