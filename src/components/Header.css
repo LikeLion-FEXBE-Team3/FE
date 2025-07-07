@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
@@ -21,8 +21,9 @@
 }
 
 .logo {
-  font-size: 4rem;
-  font-weight: bold;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 2%;
 }
 
 .search-box {
@@ -31,13 +32,14 @@
 
 .search-tagline {
   margin-left: 10px;
+  margin-right: 10%;
   font-style: italic;
   color: #666;
   white-space: nowrap;
 }
 
 .search-input {
-  width: 100%;
+  width: 80%;
   height: 50px;
   padding: 0 60px 0 20px;
   border: 1px solid #ea0a81e7;
@@ -64,6 +66,5 @@
 }
 
 .header__right a:hover {
-  color: #1DB954; 
+  color: #1db954;
 }
-

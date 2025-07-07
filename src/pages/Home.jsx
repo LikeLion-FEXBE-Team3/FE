@@ -1,46 +1,36 @@
-import Genrecard from '../components/GenreCard';
-import styled from 'styled-components';
-
-const boxes = [
-  { title: '댄스', to: '/artist' },
-  { title: '랩/힙합',     to: '/genre' },
-  { title: '발라드',     to: '/chart' },
-  { title: '자유게시판',   to: '/recommend' },
-];
+import GenreCard from "../components/GenreCard";
+import styled from "styled-components";
 
 export default function Home() {
   return (
-    <Entire>
-    <GenreBox>
-      <Gbox>
-      <Genrecard genre="댄스"/>
-      <Genrecard genre="힙합"/>
-      </Gbox>
-      <Gbox>
-      <Genrecard genre="발라드"/>
-      <Genrecard genre="자유"/>
-      </Gbox>
-    </GenreBox>
-
-    </Entire>
+    <Wrapper>
+      <Grid>
+        <GenreCard genre='DANCE' />
+        <GenreCard genre='HIPHOP' />
+        <GenreCard genre='BALLAD' />
+        <GenreCard genre='자유 게시판' />
+      </Grid>
+    </Wrapper>
   );
 }
 
-const Entire=styled.div`
+const Wrapper = styled.div`
   display: flex;
-  width: 1000px;
-  height: 600px;
   justify-content: center;
   align-items: center;
-`
 
-const GenreBox=styled.div`
-  display: flex;
-  gap: 50px;
-`
+  width: 80vw;
+  height: 80vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-top: 3%;
+`;
 
-const Gbox=styled.div`
-  display: flex;
-  gap: 50px;
-  flex-direction: column;
-`
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  width: 80vw;
+  height: 80vh;
+`;
