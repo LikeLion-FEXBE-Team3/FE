@@ -13,7 +13,7 @@ function Post({what}){
 
     const getPost=()=>{
         axios
-            .get(`https://shopping-website-server.onrender.com/${what}`)
+            .get(`https://localhost:8080/api/posts`)
             .then((response) => {
             setPost(Array.isArray(response.data) ? response.data : []);
             })
@@ -45,7 +45,7 @@ function Post({what}){
     let sortingPost=post;  //데이터 정렬해서 담을 변수
     if(select !=="기본"){ //기준이 기본이 아니면 실행
         sortingPost=[...post].sort((a,b)=>{ //sort함수는 결과가 양수면 b,a순이고 음수면 a,b순으로 정렬
-        return select==="조회수 높은순" ? b.viewpoint - a.viewpoint : a.viewpoint - b.viewpoint  
+        return select==="조회수 높은순" ? b.views - a.views : a.views - b.views  
         }); //높은 가격순이면 b-a를 반환->양수면(b가 a보다 크면) b,a -> 내림차순 정렬
     }
 
@@ -72,8 +72,8 @@ function Post({what}){
             {sortingPost.map(p=>(
                 <Postcard 
                 title={p.title}
-                contents={p.contents}
-                viewpoint={p.viewpoint}
+                contents={p.description}
+                viewpoint={p.views}
                 onClick={onePost}/>
             ))}
         </PostBox>
@@ -86,7 +86,9 @@ const NavBar=styled.div`
     justify-content: space-between;
 `
 const NewPost=styled.button`
-    background-color: yellow;
+    background-color: yellowgreen;
+    border-radius: 16px;
+    border: none;
 `
 const PostBox=styled.div`
     display: flex;

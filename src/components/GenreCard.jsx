@@ -19,12 +19,16 @@ function GenreCard({genre}){
 
 const Card=styled.div`
     display: flex;
-    width: 200px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
     border-radius: 16px;
     font-weight: 700;
     color: white;
     background-color: black;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, blue, skyblue);
+
 `
 
 export default GenreCard
